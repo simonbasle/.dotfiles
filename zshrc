@@ -6,7 +6,7 @@ source $ZSHA_BASE/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # load various 3rd-party bundles
-antigen bundles <<<EOBUNDLES
+antigen bundles <<EOBUNDLES
   # git related completions
   git
 
