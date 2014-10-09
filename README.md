@@ -2,6 +2,6 @@
 *Based on Zsh, Oh-My-Zsh and Antigen*
 
 clone into ~/.dotfiles/
-
-    ln -s ~/.dotfiles/zshrc ~/.zshrc
+    cd ~
+    ln -s ~/.dotfiles/zshrc .zshrc
 
