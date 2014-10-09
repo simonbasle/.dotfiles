@@ -51,7 +51,8 @@ EOBUNDLES
 antigen bundle $ZSHA_BASE/alias
 
 # choose a theme
-antigen theme af-magic
+#antigen theme af-magic
+antigen bundle sindresorhus/pure
 
 # apply antigen to zsh
 antigen apply
