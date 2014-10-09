@@ -51,7 +51,7 @@ EOBUNDLES
 antigen bundle $ZSHA_BASE/alias
 
 # choose a theme
-antigen theme ys
+antigen theme af-magic
 
 # apply antigen to zsh
 antigen apply
