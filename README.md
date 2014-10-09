@@ -2,8 +2,14 @@
 *Based on Zsh, Oh-My-Zsh and Antigen*
 
 clone into ~/.dotfiles/
+
     cd ~
     ln -s ~/.dotfiles/zshrc .zshrc
+    cd .dotfiles/
+    git submodule init
+    git submodule update
+    cd
+    zsh
 
 ##Themes and Putty
  - Check "Allow selection of variable-pitch fonts"
