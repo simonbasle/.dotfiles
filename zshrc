@@ -50,9 +50,15 @@ EOBUNDLES
 antigen bundle $ZSHA_BASE/alias
 
 # choose a theme
+################
 #fallback to af-magic if more advanced theme don't work well
 #antigen theme af-magic
-antigen bundle sindresorhus/pure
-
+################
+#On Babun, shell is too slow with powerline themes so fall back to pure
+if (($+BABUN_HOME)) then
+  antigen bundle sindresorhus/pure
+else
+  antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+fi
 # apply antigen to zsh
 antigen apply
