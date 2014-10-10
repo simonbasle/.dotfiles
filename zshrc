@@ -99,8 +99,8 @@ echo "$CYAN Local Bundles And Theme Loaded in $(toc $START)s$RESET"
 
 # apply antigen to zsh
 antigen apply
-echo $GREEN
-echo "Antigen Done in TOTAL  $(toc $START_ANTIGEN)s$RESET"
+echo "Antigen Done in TOTAL  $(toc $START_ANTIGEN)s"
+echo
 
 # generate help
 ###############
@@ -118,6 +118,6 @@ function help() {
 #################
 echo "Welcome Simon - for a list of useful aliases/functions, type 'help'"
 if [[ -f $ADOTDIR/revert-info ]]; then
-    echo "last antigen update :";
-    cat $ADOTDIR/revert-info;
+    echo "last antigen update :"
+    cat $ADOTDIR/revert-info | head -n 1
 fi
