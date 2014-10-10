@@ -95,10 +95,9 @@ if (($+BABUN_HOME)) then
   #theme
   #On Babun, shell is too slow with powerline themes so fall back to pure
   THEME="antigen bundle sindresorhus/pure"
-elif contains $FULLOSTYPE "Linux raspbmc" then
+elif contains $FULLOSTYPE "Linux raspbmc"; then
   echo "Raspbmc"
-  source /etc/profile
-  # antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+  antigen bundle $DOTFILES/scripts/raspbmc
 else
   echo "Other System, please check the PATH : "
   echo $PATH
@@ -126,8 +125,8 @@ function help() {
 
 # Welcome message
 #################
-echo "Welcome Simon - for a list of useful aliases/functions, type 'help'"
+echo "Welcome Simon - for a list of useful aliases/functions, type 'help'" 
 if [[ -f $ADOTDIR/revert-info ]]; then
-    echo "last antigen update :"
-    cat $ADOTDIR/revert-info | head -n 1
+    LASTUPDATE=cat $ADOTDIR/revert-info | head -n 1
+    echo "last antigen update : $LASTUPDATE"
 fi
