@@ -1,10 +1,10 @@
 #Dotfiles for Simon
 *Based on Zsh, Oh-My-Zsh and Antigen*
 
-- [Installation](#Installation)
-- [Install a Glyph-Heavy Font](#Dowload-a-Powerline-patched-font)
-- [Configure Putty](#Putty)
-- [Configure Mintty/Babun](#Mintty)
+- [Installation](#installation)
+- [Install a Glyph-Heavy Font](#dowload-a-powerline-patched-font)
+- [Configure Putty](#putty)
+- [Configure Mintty/Babun](#mintty)
 
 ##Installation
 Pre-requisites : python, pip, git
