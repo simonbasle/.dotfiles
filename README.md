@@ -1,25 +1,50 @@
 #Dotfiles for Simon
 *Based on Zsh, Oh-My-Zsh and Antigen*
 
-clone into ~/.dotfiles/
+- [Installation](#Installation)
+- [Install a Glyph-Heavy Font](#Dowload-a-Powerline-patched-font)
+- [Configure Putty](#Putty)
+- [Configure Mintty/Babun](#Mintty)
 
-    cd ~
+##Installation
+Pre-requisites : python, pip, git
+    
+    cd
+    git clone https://github.com/simonbasle/.dotfiles.git .dotfiles
     ln -s ~/.dotfiles/zshrc .zshrc
     cd .dotfiles/
     git submodule init
     git submodule update
     cd
+
+Install modules pre-requisites
+
+    sudo apt-get install command-not-found
+    sudo apt-file update
+    sudo update-command-not-found
+    
+    pip install Pygments
+    
+    sudo apt-get install socat
+    pip install powerline-status
+
+Launch zsh
+
     zsh
 
-##Themes and Putty
+## Themes and Fonts
+### Download a Powerline-patched font
+Like [DejaVu Sans Mono for Powerline](https://github.com/Lokaltog/powerline-fonts/tree/master/DejaVuSansMono).
+
+### Putty
  - Check "Allow selection of variable-pitch fonts"
- - Use font DejaVu Sans Mono size 10
+ - Use font DejaVu Sans Mono for Powerline size 10
  - Use cleartype
  - Set translation encoding to UTF-8
 
-###Solarized dark theme on putty saved session
+#### Solarized dark theme on putty saved session
 Create a .reg file with content below.
-Replace PUTTYCONFIG by the name of the putty saved session you want to colorize:
+Replace **PUTTYCONFIG by the name of the putty saved session** you want to colorize:
 
     Windows Registry Editor Version 5.00
     
@@ -48,3 +73,36 @@ Replace PUTTYCONFIG by the name of the putty saved session you want to colorize:
     "Colour21"="253,246,227"
 
 That's the Solarized Dark theme as found on [Solarized github's putty section](https://github.com/altercation/solarized/tree/master/putty-colors-solarized).
+
+### Mintty
+*(eg. Babun shell)*
+
+Use the DejaVu Sans Mono for Powerline font.
+
+Append the [Solarized for Mintty](https://github.com/karlin/mintty-colors-solarized/blob/master/.minttyrc--solarized-dark) theme to your `~/.minttyrc` file (some option at the start may already be present):
+
+```
+Font=DejaVu Sans Mono for Powerline
+BoldAsFont=yes
+Term=xterm-256color
+BoldAsColour=yes
+Black=7,54,66
+Red=220,50,47
+Green=133,153,0
+Yellow=181,137,0
+Blue=38,139,210
+Magenta=211,54,130
+Cyan=42,161,152
+White=238,232,213
+BoldBlack=0,43,54
+BoldRed=203,75,22
+BoldGreen=88,110,117
+BoldYellow=101,123,131
+BoldBlue=131,148,150
+BoldMagenta=108,113,196
+BoldCyan=147,161,161
+BoldWhite=253,246,227
+ForegroundColour=238,232,213
+BackgroundColour=0,43,54
+CursorColour=133,153,0
+```
