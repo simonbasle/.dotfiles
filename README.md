@@ -2,7 +2,7 @@
 *Based on Zsh, Oh-My-Zsh and Antigen*
 
 - [Installation](#installation)
-- [Install a Glyph-Heavy Font](#dowload-a-powerline-patched-font)
+- [Install a Glyph-Heavy Font](#download-a-powerline-patched-font)
 - [Configure Putty](#putty)
 - [Configure Mintty/Babun](#mintty)
 
