@@ -95,7 +95,7 @@ if (($+BABUN_HOME)) then
   #theme
   #On Babun, shell is too slow with powerline themes so fall back to pure
   THEME="antigen bundle sindresorhus/pure"
-elif [[ FULLOSTYPE =~ "Linux raspbmc" ]] then
+elif contains $FULLOSTYPE "Linux raspbmc" then
   echo "Raspbmc"
   source /etc/profile
   # antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
