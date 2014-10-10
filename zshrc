@@ -77,24 +77,34 @@ echo "$CYAN build and dev tools loaded in $(toc $START)s$RESET"
 
 # load local bundles and env-specific bundles
 #############################################
+FULLOSTYPE=$(uname -a)
 START=$(tic)
 set -A HELP_DOTFILES
+#theme
+######
+#fallback to af-magic if more advanced theme don't work well
+#THEME="antigen theme af-magic"
+THEME="antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train"
+#common scripts
+echo "Working in $OSTYPE $FULLOSTYPE"
 antigen bundle $DOTFILES/scripts/common
 if (($+BABUN_HOME)) then
-  echo "Babun Detected"
+  echo "Babun"
   #Source babun-specific configurations
   antigen bundle $DOTFILES/scripts/babun
   #theme
-  ######
   #On Babun, shell is too slow with powerline themes so fall back to pure
-  antigen bundle sindresorhus/pure
+  THEME="antigen bundle sindresorhus/pure"
+elif [[ FULLOSTYPE =~ "Linux raspbmc" ]] then
+  echo "Raspbmc"
+  source /etc/profile
+  # antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 else
-  #theme
-  ######
-  #fallback to af-magic if more advanced theme don't work well
-  #export ANTIGEN_THEME="antigen theme af-magic"
-  antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+  echo "Other System, please check the PATH : "
+  echo $PATH
 fi
+echo "applying theme using $THEME"
+eval $THEME
 echo "$CYAN Local Bundles And Theme Loaded in $(toc $START)s$RESET"
 
 # apply antigen to zsh
