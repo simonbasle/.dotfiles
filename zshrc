@@ -1,6 +1,6 @@
 # configure antigen
-ZSHA_BASE=$HOME/.dotfiles
-source $ZSHA_BASE/antigen/antigen.zsh
+$DOTFILES=$HOME/.dotfiles
+source $DOTFILES/antigen/antigen.zsh
 
 #ensure correct terminal configuration
 export LANG=en_US.UTF-8
@@ -56,12 +56,12 @@ THEME="antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train"
 export HELP_DOTFILES="Useful aliases/functions:"
 
 # load local bundles and env-specific bundles
-antigen bundle $ZSHA_BASE/scripts/common
+antigen bundle $DOTFILES/scripts/common
 if (($+BABUN_HOME)) then
   #On Babun, shell is too slow with powerline themes so fall back to pure
   THEME="antigen bundle sindresorhus/pure"
   #Source babun-specific configurations
-  antigen bundle $ZSHA_BASE/scripts/babun/babun.zsh
+  antigen bundle $DOTFILES/scripts/babun/babun.zsh
 fi
 
 # apply theme
