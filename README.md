@@ -7,7 +7,7 @@
 - [Configure Babun](#babun)
 
 ##Installation
-Pre-requisites : python, pip, git
+Pre-requisites not detailled here: zsh, python, pip, git
     
     cd
     git clone https://github.com/simonbasle/.dotfiles.git .dotfiles
@@ -19,12 +19,16 @@ Pre-requisites : python, pip, git
 
 Install modules pre-requisites
 
+    #required by the zshrc
+    sudo apt-get install bc
+
     sudo apt-get install command-not-found
     sudo apt-file update
     sudo update-command-not-found
     
     pip install Pygments
     
+    #required by glyph heavy themes
     sudo apt-get install socat
     pip install powerline-status
 
