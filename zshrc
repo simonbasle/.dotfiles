@@ -1,5 +1,5 @@
 # configure antigen
-$DOTFILES=$HOME/.dotfiles
+DOTFILES=$HOME/.dotfiles
 source $DOTFILES/antigen/antigen.zsh
 
 #ensure correct terminal configuration
@@ -71,7 +71,7 @@ eval $THEME
 antigen apply
 
 # help : append useful aliases from bundles
-export HELP_DOTFILES="$HELP_DOTFILES\ngst, ggpush, gcmsg : git status / push origin currBranch / commit -m"
+export HELP_DOTFILES="$HELP_DOTFILES\ngst, ggpush, gcmsg : git status / push origin currBranch / commit -m\ngi - generate a gitignore file\nx - extract from various archive formats"
 echo "Welcome Simon - for a list of useful aliases/functions, type 'help'"
 function help() {
   echo $HELP_DOTFILES;
