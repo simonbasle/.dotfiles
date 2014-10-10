@@ -46,19 +46,33 @@ antigen bundles <<EOBUNDLES
   vagrant
 EOBUNDLES
 
-# load local bundles
-antigen bundle $ZSHA_BASE/alias
-
 # choose a theme
 ################
 #fallback to af-magic if more advanced theme don't work well
-#antigen theme af-magic
+#THEME="antigen theme af-magic"
 ################
-#On Babun, shell is too slow with powerline themes so fall back to pure
+THEME="antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train"
+
+export HELP_DOTFILES="Useful aliases/functions:"
+
+# load local bundles and env-specific bundles
+antigen bundle $ZSHA_BASE/scripts/common
 if (($+BABUN_HOME)) then
-  antigen bundle sindresorhus/pure
-else
-  antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+  #On Babun, shell is too slow with powerline themes so fall back to pure
+  THEME="antigen bundle sindresorhus/pure"
+  #Source babun-specific configurations
+  antigen bundle $ZSHA_BASE/scripts/babun/babun.zsh
 fi
+
+# apply theme
+eval $THEME
+
 # apply antigen to zsh
 antigen apply
+
+# help : append useful aliases from bundles
+export HELP_DOTFILES="$HELP_DOTFILES\ngst, ggpush, gcmsg : git status / push origin currBranch / commit -m"
+echo "Welcome Simon - for a list of useful aliases/functions, type 'help'"
+function help() {
+  echo $HELP_DOTFILES;
+}
