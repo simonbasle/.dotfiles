@@ -2,6 +2,10 @@
 ZSHA_BASE=$HOME/.dotfiles
 source $ZSHA_BASE/antigen/antigen.zsh
 
+#ensure correct terminal configuration
+export LANG=en_US.UTF-8
+export TERM=xterm-256color
+
 # load oh-my-zsh
 antigen use oh-my-zsh
 
@@ -13,15 +17,10 @@ antigen bundles <<EOBUNDLES
   # search command history for prefixed commands
   zsh-users/zsh-history-substring-search
 
-  # locate the package in which to find an unknown command
-  #needs /etc/zsh_command_not_found : apt-get install command-not-found
-  #apt-get install command-not-found
-  #sudo apt-file update
-  #sudo update-command-not-found
+  # locate the package in which to find an unknown command (via /etc/zsh_command_not_found)
   command-not-found
 
-  # cat with syntax highlight
-  #needs pygmentize from python's pygments : pip install Pygments
+  # cat with syntax highlight (need python's Pygments)
   colorize
 
   # adds color to man pages
@@ -47,10 +46,11 @@ antigen bundles <<EOBUNDLES
   vagrant
 EOBUNDLES
 
-# load custom bundles
+# load local bundles
 antigen bundle $ZSHA_BASE/alias
 
 # choose a theme
+#fallback to af-magic if more advanced theme don't work well
 #antigen theme af-magic
 antigen bundle sindresorhus/pure
 
