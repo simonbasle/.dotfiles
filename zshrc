@@ -1,5 +1,5 @@
 # prepare for antigen
-DOTFILES=$HOME/.dotfiles
+export DOTFILES=$HOME/.dotfiles
 source $DOTFILES/scripts/pre_antigen.zsh
 
 # configure antigen
@@ -72,6 +72,7 @@ THEME="antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train"
 echo "$MAGENTA Common$RESET"
 START=$(tic)
 antigen bundle $DOTFILES/scripts/common
+antigen bundle $DOTFILES/install
 echo "$CYAN [$(toc $START)s]$RESET"
 
 START=$(tic)
