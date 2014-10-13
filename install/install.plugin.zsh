@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# dotinstall scriptname [where]
+#
+# attempt to run a custom install.zsh script found in subdirectory "scriptname"
 function dotinstall() {
 	echo "Attempting to install $1"
 	WHERE=$PWD
@@ -13,3 +16,5 @@ function dotinstall() {
 	unset WHERE
 	unset FROM
 }
+
+HELP_DOTFILES+=("dotinstall package" "attempt to run a custom install.zsh script found in subdirectory$YELLOW package$RESET")

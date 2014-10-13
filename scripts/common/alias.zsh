@@ -26,6 +26,7 @@ function pwdd() {
 }
 
 
-HELP_DOTFILES+=("topdirs" "list biggest dirs in current directory (see also topfiles)" "move" "rsync move the files, with a progress bar")
+HELP_DOTFILES+=("topdirs" "list biggest dirs in current directory (see also topfiles)")
+HELP_DOTFILES+=("move file1 fil2 dest" "rsync move the$YELLOW files$RESET to$CYAN dest$RESET, with a progress bar")
 HELP_DOTFILES+=("nicemount" "more readable version of mount list" "falias" "grep the alias list for a specific word" "G" "global alias, pipes a grep")
 HELP_DOTFILES+=("pwdd" "shows current directory (not full path), quoted")

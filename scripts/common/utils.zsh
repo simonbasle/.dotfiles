@@ -39,6 +39,6 @@ function help() {
   echo "Useful aliases/functions:"
   #for every pair in array (command and description), print the command in magenta, pad with dots and print the description
   for k v ("${(@kv)HELP_DOTFILES}"); do
-    echo "  $MAGENTA${(r:10::.:: :)${k}}$RESET$v"
+    echo "  $MAGENTA${(r:25::.:: :)${k}}$RESET$v"
   done
 }
