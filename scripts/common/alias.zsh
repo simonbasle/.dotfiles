@@ -15,5 +15,17 @@ alias falias='alias | grep'
 #nicer presentation of mount
 function nicemount() { (echo "DEVICE PATH TYPE FLAGS" && mount | awk '$2="";1') | column -t ; }
 
+#get current dir (only last dir)
+function pwdd() {
+  result=${PWD##*/}          # to assign to a variable
+  #printf '%s\n' "${PWD##*/}" # to print to stdout
+                           # ...more robust than echo for unusual names
+                           #    (consider a directory named -e or -n
+  printf '%q\n' "${PWD##*/}" # to print to stdout, quoted for use as shell input
+                           # ...useful to make hidden characters readable.
+}
+
+
 HELP_DOTFILES+=("topdirs" "list biggest dirs in current directory (see also topfiles)" "move" "rsync move the files, with a progress bar")
 HELP_DOTFILES+=("nicemount" "more readable version of mount list" "falias" "grep the alias list for a specific word" "G" "global alias, pipes a grep")
+HELP_DOTFILES+=("pwdd" "shows current directory (not full path), quoted")
