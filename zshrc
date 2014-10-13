@@ -81,7 +81,8 @@ if (($+BABUN_HOME)) then
   antigen bundle $DOTFILES/scripts/babun
   #theme
   #On Babun, shell is too slow with powerline themes so fall back to pure
-  THEME="antigen bundle sindresorhus/pure"
+  #THEME="antigen bundle sindresorhus/pure"
+  THEME="antigen theme af-magic"
 elif contains $FULLOSTYPE "Linux raspbmc"; then
   echo "$MAGENTA Raspbmc$RESET"
   antigen bundle $DOTFILES/scripts/raspbmc
