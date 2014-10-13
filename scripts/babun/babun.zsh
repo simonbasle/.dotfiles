@@ -20,3 +20,6 @@ echo -ne '\e]4;15;#fdf6e3\a'  # bold white
 echo -ne '\e]10;#eee8d5\a'  # foreground
 echo -ne '\e]11;#002b36\a'  # background
 echo -ne '\e]12;#859900\a'  # cursor
+
+# Exclude *dlls from TAB expansion
+export EXECIGNORE="*.dll"
