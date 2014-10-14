@@ -12,6 +12,11 @@ alias ll='ls -la'
 alias -g G='| grep'
 alias falias='alias | grep'
 
+#gitignore.io gitignore tool
+function gi() {
+	curl -L -s https://www.gitignore.io/api/$@ ;
+}
+
 #nicer presentation of mount
 function nicemount() { (echo "DEVICE PATH TYPE FLAGS" && mount | awk '$2="";1') | column -t ; }
 

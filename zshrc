@@ -37,8 +37,6 @@ START=$(tic)
 #git related bundles
 antigen bundle git
 antigen bundle github
-# gitignore generation using gi via www.gitignore.io
-antigen bundle gitignore
 echo "$CYAN [$(toc $START)s]\tgit$RESET"
 
 ##UTILITIES
