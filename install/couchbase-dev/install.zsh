@@ -1,6 +1,8 @@
 FROM=$1
 WHERE=$2
 
+echo $WHERE
+
 if [[ -z $WHERE ]]; then
   WHERE=$PWD
 fi
@@ -42,9 +44,22 @@ if [[ -d "$WHERE/.git" ]]; then
       read reponame
       if [[ -z $reponame ]]; then reponame=$defreponame; fi
 
-      echo "git remote add $remote ssh://simonbasle@review.couchbase.org:29418/${reponame}.git"
+      git remote add $remote ssh://simonbasle@review.couchbase.org:29418/${reponame}.git
+      hasgerrit="$remote"
+      echo "gerrit remote added as $remote"
     else
       echo "gerrit remote skipped"
+    fi
+  fi
+
+  # REVIEW ALIAS
+  if [[ -n $hasgerrit ]]; then
+    echo -n "Gerrit remote '$hasgerrit' found, do you want to add 'git review' alias for submitting master branch to review?"
+    read yesno
+    if [[ "$yesno" == "y" ]]; then
+      git config alias.review "push $hasgerrit HEAD:refs/for/master"
+    else
+      echo "git review alias skipped"
     fi
   fi
 else
@@ -55,6 +70,7 @@ fi
 unset WHERE
 unset FROM
 unset hasgerrit
+unset hasalias
 unset reponame
 unset defreponame
 unset remote
