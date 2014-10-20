@@ -13,13 +13,13 @@ echo "installing $FROM into $WHERE"
 if [[ -d "$WHERE/.git" ]]; then
 
   # GERRIT COMMIT HOOK
-  if [[ -f "$WHERE/.git/hooks/commit-msg" ]]; then
+  if [[ -f "$WHERE/.git/hooks/commit-msg-hook" ]]; then
     echo "Commit Hook ok"
   else
     echo -n "Do you want to install couchbase gerrit review commit hook (y/n)? "
     read yesno
     if [[ "$yesno" == "y" ]]; then
-      cp "$FROM/commit-msg" "$WHERE/.git/hooks/commit-msg"
+      cp "$FROM/commit-msg-hook" "$WHERE/.git/hooks/commit-msg"
       chmod +x "$WHERE/.git/hooks/commit-msg"
       echo "Commit Hook installed"
     else
@@ -61,6 +61,14 @@ if [[ -d "$WHERE/.git" ]]; then
     else
       echo "git review alias skipped"
     fi
+  fi
+
+  # INSTALL COMMIT MESSAGE TEMPLATE
+  echo -n "Install commit template? "
+  read yesno
+  if [[ "$yesno" == "y" ]]; then
+    git config --local commit.template "$FROM/commit-msg.txt"
+    echo "commit template installed"
   fi
 else
     echo "Not a Git repository: $WHERE"

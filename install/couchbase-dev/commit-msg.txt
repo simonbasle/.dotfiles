@@ -1,0 +1,16 @@
+<TICKET-NR>: One-line short info of what has changed. this goes in the changelog.
+
+Motivation
+----------
+# A few lines about why this change is needed at all. Probably a bug that has shown up or why the enhancement,
+# or new feature makes sense.
+
+Modifications
+-------------
+# Explicit infos about what has changed, more comments on the code that has changed and explicitly state breaking
+# changes or things that impact users.
+
+Result
+------
+# What’s the outcome of the change? For example if there is a performance optimization, adding before/after numbers here
+# make sense.
