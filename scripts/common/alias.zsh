@@ -12,6 +12,14 @@ alias ll='ls -la'
 alias -g G='| grep'
 alias falias='alias | grep'
 
+#maven: install a source or javadoc into local repo
+function mvngetsource() {
+	mvn org.apache.maven.plugins:maven-dependency-plugin:get -Dartifact=$1:$2:$3:jar:sources
+}
+function mvngetdoc() {
+	mvn org.apache.maven.plugins:maven-dependency-plugin:get -Dartifact=$1:$2:$3:jar:javadoc
+}
+
 #gitignore.io gitignore tool
 function gi() {
 	curl -L -s https://www.gitignore.io/api/$@ ;
@@ -35,3 +43,5 @@ HELP_DOTFILES+=("topdirs" "list biggest dirs in current directory (see also topf
 HELP_DOTFILES+=("move file1 fil2 dest" "rsync move the$YELLOW files$RESET to$CYAN dest$RESET, with a progress bar")
 HELP_DOTFILES+=("nicemount" "more readable version of mount list" "falias" "grep the alias list for a specific word" "G" "global alias, pipes a grep")
 HELP_DOTFILES+=("pwdd" "shows current directory (not full path), quoted")
+HELP_DOTFILES+=("mvngetsource" "load sources for$YELLOW groupId artifactId version$RESET into maven repo")
+HELP_DOTFILES+=("mvngetdoc" "load javadocs for$YELLOW groupId artifactId version$RESET into maven repo")
