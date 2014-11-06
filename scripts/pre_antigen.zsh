@@ -1,3 +1,11 @@
+#tic functions and other things depends on GNU date
+#on OSX we should have them in coreutils package
+#make sure OSX uses coreutils date in the path
+if [[ "$(uname)" == "Darwin" ]]; then
+  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
+
 #prepare timing functions
 # tic()
 #
