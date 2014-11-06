@@ -17,7 +17,7 @@ Pre-requisites not detailled here: zsh, python, pip, git
     git submodule update
     cd
 
-Install modules pre-requisites
+Install modules pre-requisites in linux/babun
 
     #required by the zshrc
     sudo apt-get install bc
@@ -32,6 +32,22 @@ Install modules pre-requisites
     sudo apt-get install socat
     pip install powerline-status
 
+Install module pre-requisites in osx
+
+    #install Homebrew
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    
+    #use GNU command line utilities
+    brew install coreutils
+    
+    #pip and python through HomeBrew
+    brew install python
+    
+    #required by glyph-heavy themes
+    brew install socat
+    pip install Pygments
+    pip install powerline-status
+
 Launch zsh
 
     zsh
@@ -39,6 +55,12 @@ Launch zsh
 ## Themes and Fonts
 ### Download a Powerline-patched font
 Like [DejaVu Sans Mono for Powerline](https://github.com/Lokaltog/powerline-fonts/tree/master/DejaVuSansMono).
+Or [Menlo for Powerline](https://github.com/abertsch/Menlo-for-Powerline).
+
+### OSX
+Install the powerline font by double-clicking it then select it as the default font in Terminal.
+
+Install Solarized for OSX Terminal from [this repository](https://github.com/tomislav/osx-terminal.app-colors-solarized).
 
 ### Putty
  - Check "Allow selection of variable-pitch fonts"
