@@ -47,11 +47,9 @@ echo "$CYAN [$(toc $START)s]\tutility$RESET"
 
 ##BUILD AND DEV TOOLS
 START=$(tic)
-antigen bundle ant
 antigen bundle mvn
 antigen bundle gradle
 antigen bundle docker
-antigen bundle heroku
 antigen bundle vagrant
 echo "$CYAN [$(toc $START)s]\tbuild and dev tools$RESET"
 
