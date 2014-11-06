@@ -51,6 +51,10 @@ Install module pre-requisites in osx
 Launch zsh
 
     zsh
+    
+Once everything is good and verified, set zsh as shell
+
+    chsh -s /bin/zsh
 
 ## Themes and Fonts
 ### Download a Powerline-patched font
