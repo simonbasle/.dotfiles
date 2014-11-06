@@ -83,6 +83,12 @@ if (($+BABUN_HOME)) then
 elif contains $FULLOSTYPE "Linux raspbmc"; then
   echo "$MAGENTA Raspbmc$RESET"
   antigen bundle $DOTFILES/scripts/raspbmc
+elif contains $FULLOSTYPE "Darwin"; then
+  echo "$MAGENTA OSX$RESET"
+  antigen bundle brew
+  antigen bundle osx
+  antigen bundle terminalapp
+  #antigen bundle $DOTFILES/scripts/osx
 else
   echo "$YELLOW Other System$RESET"
   echo "Working in $OSTYPE $FULLOSTYPE"
