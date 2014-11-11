@@ -88,7 +88,7 @@ elif contains $FULLOSTYPE "Darwin"; then
   antigen bundle brew
   antigen bundle osx
   antigen bundle terminalapp
-  #antigen bundle $DOTFILES/scripts/osx
+  antigen bundle $DOTFILES/scripts/osx
 else
   echo "$YELLOW Other System$RESET"
   echo "Working in $OSTYPE $FULLOSTYPE"
