@@ -3,7 +3,7 @@
 function ssh-start() {
   echo "ssh-start : check if ssh-agent should be started"
   ssh-add -l >/dev/null 2>&1
-  if [ $? > 0 ]; then
+  if [ $? = 2 ]; then
      # No ssh-agent running
      rm -rf $SSH_AUTH_SOCK
      # force to reuse same AUTH SOCKET
