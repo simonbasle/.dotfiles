@@ -12,6 +12,9 @@ alias ll='ls -la'
 alias -g G='| grep'
 alias falias='alias | grep'
 
+#git aliases
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
 #maven: install a source or javadoc into local repo
 function mvngetsource() {
 	mvn org.apache.maven.plugins:maven-dependency-plugin:get -Dartifact=$1:$2:$3:jar:sources
