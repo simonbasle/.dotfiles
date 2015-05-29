@@ -57,7 +57,7 @@ if [[ -d "$WHERE/.git" ]]; then
     echo -n "Gerrit remote '$hasgerrit' found, do you want to add 'git review' alias for submitting master branch to review?"
     read yesno
     if [[ "$yesno" == "y" ]]; then
-      git config alias.review "push $hasgerrit HEAD:refs/for/master"
+      git config alias.review '!sh -c '\''git push '$hasgerrit' HEAD:refs/for/${1+}${1-master}'\'' -'
     else
       echo "git review alias skipped"
     fi
