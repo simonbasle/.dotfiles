@@ -36,7 +36,8 @@ echo "$CYAN [$(toc $START)s]\tcli$RESET"
 START=$(tic)
 #git related bundles
 antigen bundle git
-antigen bundle github
+#replaced by hub's own completion antigen bundle github
+#note: on OSX (brew installed, the fpath needs to be changed)
 echo "$CYAN [$(toc $START)s]\tgit$RESET"
 
 ##UTILITIES
