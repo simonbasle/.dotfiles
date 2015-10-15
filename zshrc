@@ -29,7 +29,7 @@ antigen bundle command-not-found
 # cat with syntax highlight (need python's Pygments)
 antigen bundle colorize
 # adds color to man pages
-antigen bundle colored-man
+antigen bundle colored-man-pages
 echo "$CYAN [$(toc $START)s]\tcli$RESET"
 
 ##GIT
