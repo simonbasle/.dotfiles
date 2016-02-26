@@ -23,6 +23,9 @@ function mvngetdoc() {
 	mvn org.apache.maven.plugins:maven-dependency-plugin:get -Dartifact=$1:$2:$3:jar:javadoc
 }
 
+#maven quickstart
+alias mvnquick='mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart'
+
 #gitignore.io gitignore tool
 function gi() {
 	curl -L -s https://www.gitignore.io/api/$@ ;
