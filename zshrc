@@ -96,7 +96,6 @@ elif contains $FULLOSTYPE "Linux raspbmc"; then
 elif contains $FULLOSTYPE "Darwin"; then
   echo "$MAGENTA OSX$RESET"
   antigen bundle brew
-  antigen bundle brew-cask
   antigen bundle osx
   antigen bundle terminalapp
   antigen bundle $DOTFILES/scripts/osx
