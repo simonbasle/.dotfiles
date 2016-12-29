@@ -99,6 +99,7 @@ elif contains $FULLOSTYPE "Darwin"; then
   antigen bundle brew
   antigen bundle osx
   antigen bundle terminalapp
+  antigen bundle httpie
   antigen bundle $DOTFILES/scripts/osx
 else
   echo "$YELLOW Other System$RESET"
