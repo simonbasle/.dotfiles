@@ -5,5 +5,5 @@ export PATH=$PATH:~/dev/go/gosource/bin
 # set the default Java to JDK 1.8
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
-#hub github access token
-export HOMEBREW_GITHUB_API_TOKEN="149628d9faee03e45b768e5f172208e0656fb317"
+#used to source homebrew github access token HOMEBREW_GITHUB_API_TOKEN
+#previous committed one was revoked, moved to uncomitted ../common/private.zsh
