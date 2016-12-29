@@ -30,3 +30,8 @@ for COLOR in RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE; do
     eval BOLD_$COLOR='$fg_bold[${(L)COLOR}]'
 done
 eval RESET='$reset_color'
+
+# configure hub's completion BEFORE antigen/omz start
+if (( ! ${fpath[(I)/usr/local/share/zsh/site-functions]} )); then
+  FPATH=/usr/local/share/zsh/site-functions:$FPATH
+fi
