@@ -72,6 +72,15 @@ set -A HELP_DOTFILES
 ######
 #fallback to af-magic if more advanced theme don't work well
 #THEME="antigen theme af-magic"
+BULLETTRAIN_PROMPT_ORDER=(
+  time
+  status
+  custom
+  context
+  dir
+  git
+  cmd_exec_time
+)
 THEME="antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train"
 
 
