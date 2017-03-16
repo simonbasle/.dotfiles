@@ -81,6 +81,7 @@ BULLETTRAIN_PROMPT_ORDER=(
   git
   cmd_exec_time
 )
+BULLETTRAIN_PROMPT_CHAR='$ '
 THEME="antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train"
 
 
