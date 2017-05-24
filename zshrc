@@ -122,6 +122,9 @@ else
   echo $PATH
 fi
 eval $THEME
+# ensure ls colors are solarized
+antigen bundle joel-porquet/zsh-dircolors-solarized.git
+echo "theme set, you can colorize the console using setupsolarized"
 echo "$CYAN [$(toc $START)s]\tScript+Theme$RESET"
 
 # apply antigen to zsh
