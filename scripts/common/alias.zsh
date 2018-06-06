@@ -14,6 +14,7 @@ alias falias='alias | grep'
 
 #git aliases
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+git config --global alias.changelog '!git shortlog -esn $1 && git log --pretty=format:"%s%x09%x09%h" $1 && :'
 
 #maven: install a source or javadoc into local repo
 function mvngetsource() {
@@ -51,3 +52,4 @@ HELP_DOTFILES+=("nicemount" "more readable version of mount list" "falias" "grep
 HELP_DOTFILES+=("pwdd" "shows current directory (not full path), quoted")
 HELP_DOTFILES+=("mvngetsource" "load sources for$YELLOW groupId artifactId version$RESET into maven repo")
 HELP_DOTFILES+=("mvngetdoc" "load javadocs for$YELLOW groupId artifactId version$RESET into maven repo")
+HELP_DOTFILES+=("git changelog TAG..BRANCH " "author list followed by oneline changelog for commits between$YELLOW TAG$RESET and$CYAN BRANCH$RESET (subject and sha1)")
