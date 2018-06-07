@@ -14,7 +14,7 @@ alias falias='alias | grep'
 
 #git aliases
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-git config --global alias.changelog '!git shortlog -esn $1 && git log --pretty=format:"%s%x09%x09%h" $1 && :'
+git config --global alias.changelog '!git shortlog -esn $1 && git log --reverse --pretty=format:"%s%x09%x09%h" $1 && :'
 
 #maven: install a source or javadoc into local repo
 function mvngetsource() {
