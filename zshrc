@@ -24,8 +24,6 @@ START=$(tic)
 antigen bundle zsh-users/zsh-syntax-highlighting
 # search command history for prefixed commands
 antigen bundle zsh-users/zsh-history-substring-search
-# locate the package in which to find an unknown command (via /etc/zsh_command_not_found)
-antigen bundle command-not-found
 # cat with syntax highlight (need python's Pygments)
 antigen bundle colorize
 # adds color to man pages
