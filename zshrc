@@ -112,7 +112,6 @@ elif contains $FULLOSTYPE "Darwin"; then
   echo "$MAGENTA OSX$RESET"
   antigen bundle brew
   antigen bundle osx
-  antigen bundle terminalapp
   antigen bundle httpie
   antigen bundle $DOTFILES/scripts/osx
 else
