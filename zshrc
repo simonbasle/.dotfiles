@@ -58,8 +58,8 @@ echo "$CYAN [$(toc $START)s]\tbuild and dev tools$RESET"
 ##Java, Ruby & Python
 START=$(tic)
 antigen bundle spring
-antigen bundle ruby
-antigen bundle rbenv
+# antigen bundle ruby
+# antigen bundle rbenv
 antigen bundle python
 echo "$CYAN [$(toc $START)s]\tJava, Ruby & Python$RESET"
 
