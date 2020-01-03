@@ -23,6 +23,12 @@ function mvngetsource() {
 function mvngetdoc() {
 	mvn org.apache.maven.plugins:maven-dependency-plugin:get -Dartifact=$1:$2:$3:jar:javadoc
 }
+function mvngetall() {
+	mvn org.apache.maven.plugins:maven-dependency-plugin:get -DgroupId=$1 -DartifactId=$2 -Dversion=$3 -Dpackaging=jar
+	mvn org.apache.maven.plugins:maven-dependency-plugin:get -DgroupId=$1 -DartifactId=$2 -Dversion=$3 -Dpackaging=jar -Dclassifier=sources
+	mvn org.apache.maven.plugins:maven-dependency-plugin:get -DgroupId=$1 -DartifactId=$2 -Dversion=$3 -Dpackaging=jar -Dclassifier=javadoc
+	mvn org.apache.maven.plugins:maven-dependency-plugin:get -DgroupId=$1 -DartifactId=$2 -Dversion=$3 -Dpackaging=pom
+}
 
 #maven quickstart
 alias mvnquick='mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart'
@@ -52,4 +58,5 @@ HELP_DOTFILES+=("nicemount" "more readable version of mount list" "falias" "grep
 HELP_DOTFILES+=("pwdd" "shows current directory (not full path), quoted")
 HELP_DOTFILES+=("mvngetsource" "load sources for$YELLOW groupId artifactId version$RESET into maven repo")
 HELP_DOTFILES+=("mvngetdoc" "load javadocs for$YELLOW groupId artifactId version$RESET into maven repo")
+HELP_DOTFILES+=("mvngetall" "load jar+sources+javadoc+pom for$YELLOW groupId artifactId version$RESET into maven repo")
 HELP_DOTFILES+=("git changelog TAG..BRANCH " "author list followed by oneline changelog for commits between$YELLOW TAG$RESET and$CYAN BRANCH$RESET (subject and sha1)")
