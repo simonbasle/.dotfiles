@@ -1,6 +1,7 @@
 # prepare for antigen
 export DOTFILES=$HOME/.dotfiles
 source $DOTFILES/scripts/pre_antigen.zsh
+source $DOTFILES/scripts/utils.zsh
 
 # configure antigen
 START_ANTIGEN=$(tic)
@@ -100,13 +101,13 @@ if (($+BABUN_HOME)) then
   #On Babun, shell is too slow with powerline themes so fall back to pure
   #THEME="antigen bundle sindresorhus/pure"
   THEME="antigen theme af-magic"
-elif [[ $FULLOSTYPE = *"Linux raspbmc"* ]] then
+elif contains $FULLOSTYPE "Linux raspbmc"; then
   echo "$MAGENTA Raspbmc$RESET"
   antigen bundle $DOTFILES/scripts/raspbmc
-elif [[ $FULLOSTYPE = *"xbian"* ]] then
+elif contains $FULLOSTYPE "xbian"; then
   echo "$MAGENTA XBian$RESET"
   antigen bundle $DOTFILES/scripts/raspbmc
-elif [[ $FULLOSTYPE = *"Darwin"* ]] then
+elif contains $FULLOSTYPE "Darwin"; then
   echo "$MAGENTA OSX$RESET"
   antigen bundle brew
   antigen bundle osx
