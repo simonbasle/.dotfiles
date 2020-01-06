@@ -21,12 +21,12 @@ function check_antigen() {
     LASTUPDATE=$(cat $ADOTDIR/revert-info | head -n 1)
     DAYSSINCE=$(( ( $(date +'%s') - $(date -d "$LASTUPDATE" +'%s') )/60/60/24 ))
     if [ $DAYSSINCE -gt 30 ]; then
-      echo "$BOLD_RED$DAYSSINCE$RESET days since last$YELLOW antigen update$RESET, please update!"
+      echo "$BOLD_RED$DAYSSINCE$RESET days since last$YELLOW antigen update && antigen selfupdate$RESET, please update!"
     else
       echo "$CYAN$DAYSSINCE$RESET days since last antigen update"
     fi
   else
-    echo "antigen never updated, maybe you should run$YELLOW antigen update$RESET?"
+    echo "antigen never updated, maybe you should run$YELLOW antigen update && antigen selfupdate$RESET?"
   fi
 }
 
