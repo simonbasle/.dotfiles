@@ -100,13 +100,13 @@ if (($+BABUN_HOME)) then
   #On Babun, shell is too slow with powerline themes so fall back to pure
   #THEME="antigen bundle sindresorhus/pure"
   THEME="antigen theme af-magic"
-elif contains $FULLOSTYPE "Linux raspbmc"; then
+elif [[ $FULLOSTYPE = *"Linux raspbmc"* ]] then
   echo "$MAGENTA Raspbmc$RESET"
   antigen bundle $DOTFILES/scripts/raspbmc
-elif contains $FULLOSTYPE "xbian"; then
+elif [[ $FULLOSTYPE = *"xbian"* ]] then
   echo "$MAGENTA XBian$RESET"
   antigen bundle $DOTFILES/scripts/raspbmc
-elif contains $FULLOSTYPE "Darwin"; then
+elif [[ $FULLOSTYPE = *"Darwin"* ]] then
   echo "$MAGENTA OSX$RESET"
   antigen bundle brew
   antigen bundle osx
