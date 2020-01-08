@@ -17,20 +17,30 @@ function contains() {
 #
 # print days since last antigen update, warning if > 30
 function check_antigen() {
-  if [[ -f $ADOTDIR/revert-info ]]; then
-    LASTUPDATE=$(cat $ADOTDIR/revert-info | head -n 1)
-    DAYSSINCE=$(( ( $(date +'%s') - $(date -d "$LASTUPDATE" +'%s') )/60/60/24 ))
+  if [[ -f $DOTFILES/.last-update-tracker ]]; then
+    LASTUPDATE=$(cat $DOTFILES/.last-update-tracker | head -n 1)
+    DAYSSINCE=$(( ( $(date +'%s') - $(date -d "$LASTUPDATE" +'%s') ) / 60 / 60 / 24 ))
     if [ $DAYSSINCE -gt 30 ]; then
-      echo "$BOLD_RED$DAYSSINCE$RESET days since last$YELLOW antigen update && antigen selfupdate$RESET, please update!"
+      echo "$BOLD_RED$DAYSSINCE$RESET days since last$YELLOW update_antigen$RESET, please update!"
     else
-      echo "$CYAN$DAYSSINCE$RESET days since last antigen update"
+      echo "$CYAN$DAYSSINCE$RESET days since last update_antigen"
     fi
   else
-    echo "antigen never updated, maybe you should run$YELLOW antigen update && antigen selfupdate$RESET?"
+    echo "antigen never updated, maybe you should run$YELLOW update_antigen$RESET?"
   fi
 }
 
 HELP_DOTFILES+=("check_antigen" "checks the date of the last antigen update")
+
+# update_antigen()
+#
+# update antigen modules, antigen itself and puts the date to a file to compute last update date
+function update_antigen() {
+  antigen update && antigen selfupdate
+  date > $DOTFILES/.last-update-tracker
+}
+
+HELP_DOTFILES+=("update_antigen" "performs antigen update and antigen selfupdate")
 
 # help()
 #

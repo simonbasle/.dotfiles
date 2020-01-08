@@ -1,3 +1,5 @@
+set -A HELP_DOTFILES
+
 # prepare for antigen
 export DOTFILES=$HOME/.dotfiles
 source $DOTFILES/scripts/pre_antigen.zsh
@@ -66,7 +68,6 @@ echo "$CYAN [$(toc $START)s]\tJava, Ruby & Python$RESET"
 # load local bundles and env-specific bundles
 #############################################
 FULLOSTYPE=$(uname -a)
-set -A HELP_DOTFILES
 #theme
 ######
 #fallback to af-magic if more advanced theme don't work well
