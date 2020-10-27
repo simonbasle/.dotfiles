@@ -14,7 +14,7 @@ alias falias='alias | grep'
 
 #git aliases
 git config --global alias.lg "log --color --graph --pretty=format:'%C(dim red)%h%Creset - %C(blue black)%s%Creset %C(white yellow)%d%Creset (%Cgreen%cr %Creset%an)' --abbrev-commit"
-git config --global alias.changelog '!git shortlog -esn $1 && git log --reverse --pretty=format:"%s%x09%x09%h" $1 && :'
+git config --global alias.changelog '!git shortlog -esn $1 $2 $3 && git log --reverse --pretty=format:"%s%x09%x09%h" $1 $2 $3'
 
 #maven: install a source or javadoc into local repo
 function mvngetsource() {
@@ -59,4 +59,4 @@ HELP_DOTFILES+=("pwdd" "shows current directory (not full path), quoted")
 HELP_DOTFILES+=("mvngetsource" "load sources for$YELLOW groupId artifactId version$RESET into maven repo")
 HELP_DOTFILES+=("mvngetdoc" "load javadocs for$YELLOW groupId artifactId version$RESET into maven repo")
 HELP_DOTFILES+=("mvngetall" "load jar+sources+javadoc+pom for$YELLOW groupId artifactId version$RESET into maven repo")
-HELP_DOTFILES+=("git changelog TAG..BRANCH " "author list followed by oneline changelog for commits between$YELLOW TAG$RESET and$CYAN BRANCH$RESET (subject and sha1)")
+HELP_DOTFILES+=("git changelog TAG..BRANCH [optionalParam1] [optionalParam2] " "author list followed by oneline changelog for commits between$YELLOW TAG$RESET and$CYAN BRANCH$RESET (subject and sha1)")
