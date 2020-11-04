@@ -16,6 +16,21 @@ alias falias='alias | grep'
 git config --global alias.lg "log --color --graph --pretty=format:'%C(dim red)%h%Creset - %C(blue black)%s%Creset %C(white yellow)%d%Creset (%Cgreen%cr %Creset%an)' --abbrev-commit"
 git config --global alias.changelog '!git shortlog -esn $1 $2 $3 && git log --reverse --pretty=format:"%s%x09%x09%h" $1 $2 $3'
 
+#using `delta` for git diffs (brew install git-delta)
+git config --global core.pager "delta"
+git config --global interactive.diffFilter "delta --color-only"
+git config --global delta.line-numbers true
+git config --global delta.syntax-theme "Solarized Light"
+git config --global delta.zero-style "syntax italic normal"
+git config --global delta.minus-style "syntax auto"
+git config --global delta.plus-style "syntax auto"
+git config --global delta.minus-emph-style "black bold auto"
+git config --global delta.plus-emph-style "black bold auto"
+git config --global delta.minus-non-emph-style 'syntax "#015063"'
+git config --global delta.plus-non-emph-style 'syntax "#002129"'
+
+
+
 #maven: install a source or javadoc into local repo
 function mvngetsource() {
 	mvn org.apache.maven.plugins:maven-dependency-plugin:get -Dartifact=$1:$2:$3:jar:sources
