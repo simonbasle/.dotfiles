@@ -33,11 +33,6 @@ function mvngetall() {
 #maven quickstart
 alias mvnquick='mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart'
 
-#gitignore.io gitignore tool
-function gi() {
-	curl -L -s https://www.gitignore.io/api/$@ ;
-}
-
 #nicer presentation of mount
 function nicemount() { (echo "DEVICE PATH TYPE FLAGS" && mount | awk '$2="";1') | column -t ; }
 
