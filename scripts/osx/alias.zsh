@@ -1,4 +1,3 @@
-echo "OSX init.zsh"
 #used to source homebrew github access token HOMEBREW_GITHUB_API_TOKEN
 #previous committed one was revoked, moved to uncomitted ../common/private.zsh
 
