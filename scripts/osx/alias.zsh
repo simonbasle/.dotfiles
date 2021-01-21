@@ -10,3 +10,4 @@ function atom() {
 	open -a atom && /usr/local/bin/atom $@
 }
 git config --global core.editor 'open -a atom && atom --wait'
+#gh config set editor "atom --wait"
