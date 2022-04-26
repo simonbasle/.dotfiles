@@ -20,7 +20,7 @@ git config --global alias.changelog '!git shortlog -esn $1 $2 $3 && git log --re
 git config --global core.pager "delta"
 git config --global interactive.diffFilter "delta --color-only"
 git config --global delta.line-numbers true
-git config --global delta.syntax-theme "Solarized Light"
+git config --global delta.syntax-theme "Solarized (light)"
 git config --global delta.zero-style "syntax italic normal"
 git config --global delta.minus-style "syntax auto"
 git config --global delta.plus-style "syntax auto"
