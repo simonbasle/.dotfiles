@@ -2,3 +2,4 @@
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 #aliases hub to git
 alias git=hub
+git config --global hub.protocol https
