@@ -1,13 +1,25 @@
-#jenv uses brew's folder
-export JENV_ROOT=/usr/local/opt/jenv
+function j_print_usage() {
+    VERSIONS=$(ls $SDKMAN_DIR/candidates/java | grep -v current | awk -F'.' '{print $1}' | sort -nr | uniq)
+    CURRENT=$(basename $(readlink $JAVA_HOME || echo $JAVA_HOME) | awk -F'.' '{print $1}')
+    echo "Available versions: "
+    echo "$VERSIONS"
+    echo "Current: $CURRENT"
+    echo "Usage: j <java_version>"
+}
 
-#jenv autocompletion
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+function j() {
+  if [[ $# -eq 1 ]]; then
+    VERSION_NUMBER=$1
+    IDENTIFIER=$(ls $SDKMAN_DIR/candidates/java -1 --color=never | grep -v current | grep "^$VERSION_NUMBER\." | sort -r | head -n 1)
+    sdk use java $IDENTIFIER
+  else
+    j_print_usage
+  fi
+}
 
-#alternative ways to switch to different default versions of java
-alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
-alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
-alias j17="export JAVA_HOME=`/usr/libexec/java_home -v 17`; java -version"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-echo "Use j8/j11/j17 to select default java version through JAVA_HOME. Will now default to Java 8"
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+echo "Use 'j [8|11|17]' to select default java version through JAVA_HOME. Will now default to Java 8"
+j 8
