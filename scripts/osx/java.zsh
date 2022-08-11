@@ -17,7 +17,7 @@ function j() {
   fi
 }
 
-echo "Use 'j [8|11|17]' to select default java version through JAVA_HOME. Will now default to Java 8"
+HELP_DOTFILES+=("j [8|11|17]" "select default java version through JAVA_HOME and$YELLOW SDKman$RESET")
 
 if [ -n "${VSCODE_PID+set}" ]; then
   echo "Skipping SDKman because GUI VScode detected"
