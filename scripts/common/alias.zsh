@@ -29,6 +29,8 @@ git config --global delta.plus-emph-style "black bold auto"
 git config --global delta.minus-non-emph-style 'syntax "#015063"'
 git config --global delta.plus-non-emph-style 'syntax "#002129"'
 
+#git commit message template
+git config --global commit.template $DOTFILES/scripts/common/.gitmessage
 
 
 #maven: install a source or javadoc into local repo
