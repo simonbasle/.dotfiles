@@ -7,7 +7,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 #broot
 source /Users/sbasle/.config/broot/launcher/bash/br
+alias tree=br
 
 git config --global core.editor 'codium --wait'
 
-alias tree=br
+HELP_DOTFILES+=("tree or br " "$YELLOW broot$RESET is set up to replace tree command")
+HELP_DOTFILES+=("codium " "$YELLOW vscodium$RESET is set up as git editor")
