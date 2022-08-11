@@ -17,9 +17,14 @@ function j() {
   fi
 }
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 echo "Use 'j [8|11|17]' to select default java version through JAVA_HOME. Will now default to Java 8"
-j 8
+
+if [ -n "${VSCODE_PID+set}" ]; then
+  echo "Skipping SDKman because GUI VScode detected"
+else
+  #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+  export SDKMAN_DIR="$HOME/.sdkman"
+  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+  j 8
+fi
