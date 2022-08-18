@@ -9,7 +9,14 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 source /Users/sbasle/.config/broot/launcher/bash/br
 alias tree=br
 
+function sshadd() {
+    for x in ${=SSHADD_IDS} ; do
+        ssh-add "$HOME/.ssh/$x" -t 1h
+    done
+}
+
 git config --global core.editor 'codium --wait'
 
 HELP_DOTFILES+=("tree or br " "$YELLOW broot$RESET is set up to replace tree command")
+HELP_DOTFILES+=("sshadd " "$YELLOW SSHIDS$RESET are added to agent for 1H")
 HELP_DOTFILES+=("codium " "$YELLOW vscodium$RESET is set up as git editor")
