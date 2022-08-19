@@ -3,5 +3,6 @@
 # (note: this is also the hub tool token)
 export HOMEBREW_GITHUB_API_TOKEN=TODO
 
-# (note: these are identities added by 'sshadd' alias for 1H)
+# (note: these are identities added by 'sshadd' alias for a limited time)
 export SSHADD_IDS='id1 id2 id3'
+export SSHADD_TIME='1h'
