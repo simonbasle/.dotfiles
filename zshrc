@@ -126,6 +126,11 @@ antigen bundle joel-porquet/zsh-dircolors-solarized.git
 echo "theme set, you can colorize the console using setupsolarized"
 echo "$CYAN [$(toc $START)s]\tScript+Theme$RESET"
 
+#look for a .dotfile-private.zsh file in the HOME directory
+if [[ -f $HOME/.dotfiles-private.zsh ]]; then
+    source $HOME/.dotfiles-private.zsh
+fi
+
 # apply antigen to zsh
 START=$(tic)
 antigen apply

@@ -1,4 +1,4 @@
-#TEMPLATE for common/private.zsh
+#TEMPLATE for scripts/xxx/private.zsh or $HOME/.dotfiles-private.zsh
 
 # (note: this is also the hub tool token)
 export HOMEBREW_GITHUB_API_TOKEN=TODO
