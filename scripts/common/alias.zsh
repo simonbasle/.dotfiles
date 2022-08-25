@@ -63,6 +63,12 @@ function pwdd() {
                            # ...useful to make hidden characters readable.
 }
 
+#add ssh identities defined in private.zsh env variables
+function sshadd() {
+    for x in ${=SSHADD_IDS} ; do
+        ssh-add  -t $SSHADD_TIME "$HOME/.ssh/$x"
+    done
+}
 
 HELP_DOTFILES+=("topdirs" "list biggest dirs in current directory (see also topfiles)")
 HELP_DOTFILES+=("move file1 fil2 dest" "rsync move the$YELLOW files$RESET to$CYAN dest$RESET, with a progress bar")
@@ -72,3 +78,4 @@ HELP_DOTFILES+=("mvngetsource" "load sources for$YELLOW groupId artifactId versi
 HELP_DOTFILES+=("mvngetdoc" "load javadocs for$YELLOW groupId artifactId version$RESET into maven repo")
 HELP_DOTFILES+=("mvngetall" "load jar+sources+javadoc+pom for$YELLOW groupId artifactId version$RESET into maven repo")
 HELP_DOTFILES+=("git changelog TAG..BRANCH [optionalParam1] [optionalParam2] " "author list followed by oneline changelog for commits between$YELLOW TAG$RESET and$CYAN BRANCH$RESET (subject and sha1)")
+HELP_DOTFILES+=("sshadd " "$YELLOW SSHIDS$RESET are added to agent for $SSHADD_TIME")
