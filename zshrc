@@ -89,6 +89,7 @@ THEME="antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train"
 echo "$MAGENTA Common$RESET"
 START=$(tic)
 antigen bundle $DOTFILES/scripts/common
+source $DOTFILES/scripts/common/private.zsh
 #the above includes common/private.zsh which is uncommitted
 antigen bundle $DOTFILES/install
 echo "$CYAN [$(toc $START)s]$RESET"
