@@ -88,33 +88,32 @@ THEME="antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train"
 #common scripts
 echo "$MAGENTA Common$RESET"
 START=$(tic)
-antigen bundle $DOTFILES/scripts/common
-source $DOTFILES/scripts/common/private.zsh
+antigen bundle $DOTFILES/scripts/common/
 #the above includes common/private.zsh which is uncommitted
-antigen bundle $DOTFILES/install
+antigen bundle $DOTFILES/install/
 echo "$CYAN [$(toc $START)s]$RESET"
 
 START=$(tic)
 if (($+BABUN_HOME)) then
   echo "$MAGENTA Babun$RESET"
   #Source babun-specific configurations
-  antigen bundle $DOTFILES/scripts/babun
+  antigen bundle $DOTFILES/scripts/babun/
   #theme
   #On Babun, shell is too slow with powerline themes so fall back to pure
   #THEME="antigen bundle sindresorhus/pure"
   THEME="antigen theme af-magic"
 elif contains $FULLOSTYPE "Linux raspbmc"; then
   echo "$MAGENTA Raspbmc$RESET"
-  antigen bundle $DOTFILES/scripts/raspbmc
+  antigen bundle $DOTFILES/scripts/raspbmc/
 elif contains $FULLOSTYPE "xbian"; then
   echo "$MAGENTA XBian$RESET"
-  antigen bundle $DOTFILES/scripts/raspbmc
+  antigen bundle $DOTFILES/scripts/raspbmc/
 elif contains $FULLOSTYPE "Darwin"; then
   echo "$MAGENTA OSX$RESET"
   antigen bundle brew
   antigen bundle macos
   antigen bundle httpie
-  antigen bundle $DOTFILES/scripts/osx
+  antigen bundle $DOTFILES/scripts/osx/
 else
   echo "$YELLOW Other System$RESET"
   echo "Working in $OSTYPE $FULLOSTYPE"
