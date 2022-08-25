@@ -6,7 +6,7 @@
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 #broot
-source /Users/sbasle/.config/broot/launcher/bash/br
+source ${HOME}/.config/broot/launcher/bash/br
 alias tree=br
 
 
