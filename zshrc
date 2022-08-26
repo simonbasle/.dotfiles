@@ -1,5 +1,10 @@
 set -A HELP_DOTFILES
 
+#look for a .dotfile-private.zsh file in the HOME directory
+if [[ -f $HOME/.dotfiles-private.zsh ]]; then
+    source $HOME/.dotfiles-private.zsh
+fi
+
 # prepare for antigen
 export DOTFILES=$HOME/.dotfiles
 source $DOTFILES/scripts/pre_antigen.zsh
@@ -64,6 +69,17 @@ antigen bundle spring
 antigen bundle python
 echo "$CYAN [$(toc $START)s]\tJava, Ruby & Python$RESET"
 
+## SSH configuration and bundle
+START=$(tic)
+#configure plugin ssh-agent to be lazy and have lifetime
+if [[ -v SSHADD_TIME ]]; then
+    zstyle :omz:plugins:ssh-agent lifetime $SSHADD_TIME
+else
+    zstyle :omz:plugins:ssh-agent lifetime 1h
+fi
+zstyle :omz:plugins:ssh-agent lazy yes
+antigen bundle ssh-agent
+echo "$CYAN [$(toc $START)s]\tSSH with $SSHADD_TIME caching$RESET"
 
 # load local bundles and env-specific bundles
 #############################################
@@ -125,11 +141,6 @@ eval $THEME
 antigen bundle joel-porquet/zsh-dircolors-solarized.git
 echo "theme set, you can colorize the console using setupsolarized"
 echo "$CYAN [$(toc $START)s]\tScript+Theme$RESET"
-
-#look for a .dotfile-private.zsh file in the HOME directory
-if [[ -f $HOME/.dotfiles-private.zsh ]]; then
-    source $HOME/.dotfiles-private.zsh
-fi
 
 # apply antigen to zsh
 START=$(tic)

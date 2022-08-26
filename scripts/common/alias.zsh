@@ -78,4 +78,4 @@ HELP_DOTFILES+=("mvngetsource" "load sources for$YELLOW groupId artifactId versi
 HELP_DOTFILES+=("mvngetdoc" "load javadocs for$YELLOW groupId artifactId version$RESET into maven repo")
 HELP_DOTFILES+=("mvngetall" "load jar+sources+javadoc+pom for$YELLOW groupId artifactId version$RESET into maven repo")
 HELP_DOTFILES+=("git changelog TAG..BRANCH [optionalParam1] [optionalParam2] " "author list followed by oneline changelog for commits between$YELLOW TAG$RESET and$CYAN BRANCH$RESET (subject and sha1)")
-HELP_DOTFILES+=("sshadd " "$YELLOW SSHIDS$RESET are added to agent for $SSHADD_TIME")
+HELP_DOTFILES+=("sshadd " "Add all $YELLOW SSHADD_IDS$RESET to agent for $SSHADD_TIME (AddKeysToAgent alternative)")
