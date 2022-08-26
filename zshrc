@@ -145,6 +145,7 @@ echo "$CYAN [$(toc $START)s]\tScript+Theme$RESET"
 # apply antigen to zsh
 START=$(tic)
 antigen apply
+echo "$CYAN [$(toc $START)s]\tApplying Antigen$RESET"
 echo "$MAGENTA - TOTAL $(toc $START_ANTIGEN)s$RESET"
 echo
 
