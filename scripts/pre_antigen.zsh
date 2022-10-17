@@ -2,8 +2,8 @@
 #on OSX we should have them in coreutils package
 #make sure OSX uses coreutils date in the path
 if [[ "$(uname)" == "Darwin" ]]; then
-  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-  export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+  export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+  export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
 #prepare timing functions
