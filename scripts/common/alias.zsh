@@ -15,6 +15,9 @@ alias falias='alias | grep'
 #git aliases
 git config --global alias.lg "log --color --graph --pretty=format:'%C(dim red)%h%Creset - %C(blue black)%s%Creset %C(white yellow)%d%Creset (%Cgreen%cr %Creset%an)' --abbrev-commit"
 git config --global alias.changelog '!git shortlog -esn $1 $2 $3 && git log --reverse --pretty=format:"%s%x09%x09%h" $1 $2 $3'
+git config --global alias.stashall 'stash -ku'
+#  note: we use a default value for the message parameter, git alias will repeat the parameter at the end if provided explicitly, hence the #
+git config --global alias.save '!git commit --no-verify --allow-empty --quiet -m hold && git stash push -um "${1-unstaged}" && git reset --soft HEAD^ #'
 
 #using `delta` for git diffs (brew install git-delta)
 git config --global core.pager "delta"
@@ -79,3 +82,4 @@ HELP_DOTFILES+=("mvngetdoc" "load javadocs for$YELLOW groupId artifactId version
 HELP_DOTFILES+=("mvngetall" "load jar+sources+javadoc+pom for$YELLOW groupId artifactId version$RESET into maven repo")
 HELP_DOTFILES+=("git changelog TAG..BRANCH [optionalParam1] [optionalParam2] " "author list followed by oneline changelog for commits between$YELLOW TAG$RESET and$CYAN BRANCH$RESET (subject and sha1)")
 HELP_DOTFILES+=("sshadd " "Add all $YELLOW SSHADD_IDS$RESET to agent for $SSHADD_TIME (AddKeysToAgent alternative)")
+HELP_DOTFILES+=("git save msg" "Stash files that are not staged, including untracked files. msg is optional and must be in quotes")
