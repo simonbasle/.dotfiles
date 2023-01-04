@@ -1,4 +1,4 @@
-# Title with room for issue number total max 72 chars___________ (#----)
+# Title with room for issue number total max 72 chars__________ (#-----)
 
 # Remember blank line between title and body.
 # Body: Explain *what* and *why* (not *how*). Include task ID (Jira issue).
@@ -7,9 +7,9 @@
 # Remember blank line after body.
 # Quote the issue number if any with keyword to close the issue.
 # In case the commit supersedes a PR / issue, use this pattern instead:
-# Supersedes and closes #1234.
+# Supersedes and closes gh-12345
 #
-# Fixes #1234.
+# Closes gh-12345
 
 # At the end: Include Co-authored-by for all contributors. 
 # Include at least one empty line before it. Format: 
