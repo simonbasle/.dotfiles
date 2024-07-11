@@ -35,3 +35,8 @@ eval RESET='$reset_color'
 if (( ! ${fpath[(I)/usr/local/share/zsh/site-functions]} )); then
   FPATH=/usr/local/share/zsh/site-functions:$FPATH
 fi
+
+### BUGFIX:
+# OMZ has current regression: https://github.com/ohmyzsh/ohmyzsh/issues/12328#issuecomment-2043492331
+# Set async explicitly  to 'no' for now.
+zstyle ':omz:alpha:lib:git' async-prompt no
