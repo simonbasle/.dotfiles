@@ -13,5 +13,8 @@ alias tree=br
 
 git config --global core.editor 'codium --wait'
 
+alias ghw='gh pr view --web'
+
 HELP_DOTFILES+=("tree or br " "$YELLOW broot$RESET is set up to replace tree command")
 HELP_DOTFILES+=("codium " "$YELLOW vscodium$RESET is set up as git editor")
+HELP_DOTFILES+=("ghw " "$YELLOW gh pr view --web$RESET alias")
